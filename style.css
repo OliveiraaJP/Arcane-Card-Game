@@ -37,7 +37,7 @@ main{
     align-content: flex-start;
     justify-content: center;
 }
-.carta{
+.card{
     width: 117px;
     height: 146px;
     background-color: #A7E9AF;
@@ -48,4 +48,9 @@ main{
     align-items: center;
     margin-right: 34px;
     margin-bottom: 34px;
+    display: none;
+}
+
+.showCard{
+    display: flex;
 }
