@@ -46,7 +46,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     height: 82vh;
-    width: 80vw;
+    width: 74vw;
     margin: 0 auto;
     align-content: flex-start;
     justify-content: center;
@@ -62,7 +62,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     
-    margin: 5px;
+    margin: 14px;
     position: relative;
     /* backface-visibility: hidden; */
 

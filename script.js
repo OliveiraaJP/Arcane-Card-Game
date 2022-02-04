@@ -17,7 +17,8 @@ StartGame()
 let firstCard = null;
 let secondCard = null;
 let blockCards = null;
-
+let jogadas = 0;
+// let victory = 0;
 
 function StartGame() {
     cardNum = parseInt(prompt('Com quantas cartas deseja jogar? \nSó aceitamos numeros pares entre 4 e 14.'))
@@ -34,6 +35,7 @@ function DispoeNaTela() {
     images.splice(0, cardNum);
     images = [...images, ...images];
     images.sort(comparador)
+    victory = images.length;
     images.forEach(backImg => {
         cardHTML += `
         <div class="card">
@@ -43,6 +45,7 @@ function DispoeNaTela() {
     `
     });
     cardBoard.innerHTML = cardHTML;
+    
 }
 
 
@@ -57,17 +60,23 @@ function flipCard() {
 
     if (firstCard == null) {
         firstCard = this;
+        jogadas++
+        firstCard.removeEventListener('click', flipCard);
 
         return false;
     }
 
     secondCard = this;
-
+    jogadas++
+    secondCard.removeEventListener('click', flipCard);
     checkCards()
 }
 
 function checkCards() {
     let isMatch = firstCard.childNodes[3].src === secondCard.childNodes[3].src
+    firstCard.addEventListener('click', flipCard);
+    secondCard.addEventListener('click', flipCard);
+
 
     if (isMatch == false) {
         disableCards()
@@ -84,13 +93,17 @@ function disableCards() {
         secondCard.classList.remove('flip');
         
         resetCards();
-    }, 1500)
+    }, 1000)
 }
 
 function resetCards(equalCards){
     if(equalCards == true){
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
+        victory = victory - 2;
+        if(victory == 0){
+            setTimeout(winner, 1200)
+        }
     }
     
     firstCard = null;
@@ -103,3 +116,6 @@ function comparador() {
     return Math.random() - 0.5;
 }
 
+function winner(){
+    alert('vasco');
+}
