@@ -1,33 +1,70 @@
-let cardNum = null;
-let cardsArray = [];
-
-
-
+const cardBoard = document.querySelector('.cards')
+let images = [
+    'caitlyn.jpg',
+    'ekko.jpg',
+    'jayce.jpg',
+    'jinx.jpg',
+    'medarda.jpg',
+    'vi.jpg',
+    'viktor.jpg'
+];
+images.sort(comparador)
+let cardHTML = [];
+let cardsInGame = [];
+cardNum = null;
 StartGame()
 
+let firstCard = null;
+let secondCard = null;
+
+
 function StartGame() {
-    cardNum = parseInt(prompt('Com quantas cartas deseja jogar?Só aceitamos numeros pares e abaixo de 14.'))
-    if (cardNum > 1 && cardNum < 15 && (cardNum % 2) == 0) {
-        cardsArray = document.querySelectorAll('.card')
-        // cardsArray.sort(comparador);
-        CreateGame();
+    cardNum = parseInt(prompt('Com quantas cartas deseja jogar? \nSó aceitamos numeros pares entre 4 e 14.'))
+    if (cardNum > 1 && cardNum < 15 && (cardNum % 2) == 0 && cardNum !== 2) {
+
+        DispoeNaTela();
     } else {
         StartGame();
     }
 }
 
-function CreateGame() {
-    for (let i = 0; i < cardNum; i++) {
-        console.log('evelyn')
-        cardsArray[i].classList.add('showCard')
-    }
+function DispoeNaTela() {
+    cardNum = images.length - (cardNum/2);
+    images.splice(0, cardNum);
+    images = [...images, ...images];
+    images.sort(comparador)
+    images.forEach(backImg => {
+        cardHTML += `
+        <div class="card">
+            <img class="front-face" src="img/logo.jpg">
+            <img class="back-face" src="img/${backImg}">
+        </div>    
+    `
+    });
+    cardBoard.innerHTML = cardHTML;
+    
+    // images.sort(comparador)
+    // images.forEach(backImg => {
+    //     cardHTML += `
+    //     <div class="card">
+    //         <img class="front-face" src="img/front.png">
+    //         <img class="back-face" src="img/${backImg}">
+    //     </div>    
+    // `
+    // });
+    // cardBoard.innerHTML = cardHTML;
 }
 
 
-// minhaArray.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
 
+const allCards = document.querySelectorAll('.card');
+allCards.forEach(card => card.addEventListener('click', flipCard));
 
-// Esta função pode ficar separada do código acima, onde você preferir
-function comparador() { 
-	return Math.random() - 0.5; 
+function flipCard() {
+    this.classList.toggle('flip')
 }
+
+function comparador() {
+    return Math.random() - 0.5;
+}
+
