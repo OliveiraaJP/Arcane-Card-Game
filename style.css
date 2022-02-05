@@ -1,12 +1,14 @@
 * { 
     box-sizing: border-box;
-    background-color: rgb(37, 4, 36);
+    background-color: #250424;
     font-family: 'Roboto', sans-serif;
-    
+    /* background-image: url("img/background.jpg"); */
+    /* background-position-y: 50px; */
 }
 
 body{
     background-image: url("img/background.jpg");
+    background-repeat: repeat;
 }
 
 img{
@@ -29,7 +31,8 @@ header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: rgb(37, 4, 36);
+    background-color: #250424;
+    /* z-index: 1; */
 }
 
 header h1{
@@ -38,7 +41,7 @@ header h1{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgb(37, 4, 36);
+    background-color: #250424;
 }
 
 main{
@@ -50,10 +53,19 @@ main{
     margin: 0 auto;
     align-content: flex-start;
     justify-content: center;
-    
     background: none;
     /* transform: translate(-50%, -50%); */
 }
+
+.tempo{
+    font-size: 30px;
+    position: absolute;
+    z-index: 2;
+    top: 7%;
+    right: 15%;
+
+}
+
 .card{
     width: 117px;
     height: 146px;
