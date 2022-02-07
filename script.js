@@ -19,7 +19,7 @@ let sec = 0;
 
 startGame()
 
-const timer = document.querySelector('.tempo');
+const timer = document.querySelector('.timer');
 function incrementSeconds() {
     sec++
     timer.innerHTML = `Time: ${sec}s`

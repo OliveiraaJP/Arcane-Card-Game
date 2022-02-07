@@ -1,6 +1,5 @@
 * { 
     box-sizing: border-box;
-    background-color: #250424;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -22,12 +21,15 @@ header{
     font-size: 56px;
     color: #eccccc;
     width: 100vw;
-    margin: 1.5rem auto 2.5rem auto;
+    margin: 0 auto 15px auto;
+    padding: 1.5rem 0;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     background-color: #250424;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
 }
 
 header h1{
@@ -36,7 +38,6 @@ header h1{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #250424;
 }
 
 main{
@@ -50,14 +51,14 @@ main{
     background: none;
 }
 
-.tempo{
+.timer{
     font-size: 30px;
     position: absolute;
     z-index: 2;
-    top: 14%;
-    right: 15%;
+    bottom: 3%;
+    right: 3%;
     background-color: rgba(0, 0, 255, 0);
-    color: black;
+    color: rgb(255, 255, 255);
 
 }
 
