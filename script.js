@@ -35,7 +35,7 @@ function StartGame() {
 }
 
 function DispoeNaTela() {
-    setInterval(incrementSeconds, 1000);
+    timePlayed = setInterval(incrementSeconds, 1000);
     cardNum = images.length - (cardNum / 2);
     images.splice(0, cardNum);
     images = [...images, ...images];
@@ -113,7 +113,7 @@ function comparador() {
 }
 
 function winner() {
-    clearInterval(incrementSeconds);
+    clearInterval(timePlayed);
     alert(`Você ganhou em ${jogadas} jogadas!\nTempo: ${sec} segundos`);
     let restart = prompt('Deseja reiniciar a partida?\nsim ou nao?')
     restart = restart.toUpperCase()
