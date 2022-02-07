@@ -19,7 +19,7 @@ let sec = 0;
 
 StartGame()
 
-const timer = document.querySelector('.tempo');
+const timer =  document.querySelector('.tempo');
 function incrementSeconds() {
     sec++
     timer.innerHTML = `Time: ${sec}s`
@@ -52,8 +52,8 @@ function DispoeNaTela() {
     cardBoard.innerHTML = cardHTML;
 }
 
-const allCards = document.querySelectorAll('.card');
-allCards.forEach(card => card.addEventListener('click', flipCard));
+        const allCards = document.querySelectorAll('.card');
+        allCards.forEach(card => card.addEventListener('click', flipCard));
 
 function flipCard() {
     if (blockCards) return false;

@@ -2,8 +2,6 @@
     box-sizing: border-box;
     background-color: #250424;
     font-family: 'Roboto', sans-serif;
-    /* background-image: url("img/background.jpg"); */
-    /* background-position-y: 50px; */
 }
 
 body{
@@ -16,9 +14,7 @@ img{
     height: 100px;
     background-color: #A7E9AF;
     object-fit: cover;
-    border-radius: 5px;
-    /* padding: 10px;
-    margin: 10px; */
+    border-radius: 5px;  
 }
 
 header{
@@ -32,7 +28,7 @@ header{
     flex-wrap: wrap;
     align-items: center;
     background-color: #250424;
-    /* z-index: 1; */
+    
 }
 
 header h1{
@@ -54,7 +50,6 @@ main{
     align-content: flex-start;
     justify-content: center;
     background: none;
-    /* transform: translate(-50%, -50%); */
 }
 
 .tempo{
@@ -78,7 +73,6 @@ main{
     
     margin: 14px;
     position: relative;
-    /* backface-visibility: hidden; */
 
     transform-style: preserve-3d;
     transition: all 0.8s ease;
