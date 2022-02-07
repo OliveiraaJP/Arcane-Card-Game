@@ -17,24 +17,24 @@ let blockCards = null;
 let jogadas = 0;
 let sec = 0;
 
-StartGame()
+startGame()
 
-const timer =  document.querySelector('.tempo');
+const timer = document.querySelector('.tempo');
 function incrementSeconds() {
     sec++
     timer.innerHTML = `Time: ${sec}s`
 }
 
-function StartGame() {
+function startGame() {
     cardNum = parseInt(prompt('Com quantas cartas deseja jogar? \nSó aceitamos numeros pares entre 4 e 14.'))
     if (cardNum > 1 && cardNum < 15 && (cardNum % 2) == 0 && cardNum !== 2) {
-        DispoeNaTela();
+        createGame();
     } else {
-        StartGame();
+        startGame();
     }
 }
 
-function DispoeNaTela() {
+function createGame() {
     timePlayed = setInterval(incrementSeconds, 1000);
     cardNum = images.length - (cardNum / 2);
     images.splice(0, cardNum);
@@ -52,8 +52,8 @@ function DispoeNaTela() {
     cardBoard.innerHTML = cardHTML;
 }
 
-        const allCards = document.querySelectorAll('.card');
-        allCards.forEach(card => card.addEventListener('click', flipCard));
+const allCards = document.querySelectorAll('.card');
+allCards.forEach(card => card.addEventListener('click', flipCard));
 
 function flipCard() {
     if (blockCards) return false;
@@ -74,7 +74,6 @@ function checkCards() {
     let isMatch = firstCard.childNodes[3].src === secondCard.childNodes[3].src
     firstCard.addEventListener('click', flipCard);
     secondCard.addEventListener('click', flipCard);
-
     if (isMatch == false) {
         disableCards()
     } else {
@@ -84,11 +83,9 @@ function checkCards() {
 
 function disableCards() {
     blockCards = true;
-
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-
         resetCards();
     }, 1000)
 }
@@ -102,7 +99,6 @@ function resetCards(equalCards) {
             setTimeout(winner, 1200)
         }
     }
-
     firstCard = null;
     secondCard = null;
     blockCards = false;
@@ -117,7 +113,7 @@ function winner() {
     alert(`Você ganhou em ${jogadas} jogadas!\nTempo: ${sec} segundos`);
     let restart = prompt('Deseja reiniciar a partida?\nsim ou nao?')
     restart = restart.toUpperCase()
-    if (restart == 'SIM') {
+    if (restart === 'SIM' || restart === 'S' || restart === 'SI') {
         window.location.reload();
     }
 }

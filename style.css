@@ -21,14 +21,13 @@ header{
     font-weight: 700;
     font-size: 56px;
     color: #eccccc;
-    /* width: 100vw; */
+    width: 100vw;
     margin: 1.5rem auto 2.5rem auto;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     background-color: #250424;
-    
 }
 
 header h1{
@@ -41,7 +40,6 @@ header h1{
 }
 
 main{
-    
     display: flex;
     flex-wrap: wrap;
     height: 82vh;
@@ -69,11 +67,9 @@ main{
     border-radius: 5px;
     border: 1px solid #99CEA8;
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;  
     margin: 14px;
     position: relative;
-
     transform-style: preserve-3d;
     transition: all 0.8s ease;
 }
@@ -88,14 +84,10 @@ main{
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
-    
 }
 
-.back-face{
+.back-face,
+.flip,
+.card.flip{
     transform: rotateY(180deg);
 }
-
-.flip{
-    transform: rotateY(180deg);
-}
-
