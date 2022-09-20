@@ -26,6 +26,7 @@ https://oliveiraajp.github.io/Arcane-Card-Game/
 
 ## About ❔
 
+
 <p align="center">Arcane Card Game is a fun memory game you can play to pass the time!</p>
 
 <!-- ## Preview
@@ -36,7 +37,7 @@ um gif da aplicação bem maneiro -->
 </br> 
 
 
-
+![arcane-card-game](https://user-images.githubusercontent.com/98192737/191156957-524f00da-c208-4105-8fb8-fa1f04462163.gif)
 
 
  
